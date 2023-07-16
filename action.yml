@@ -16,9 +16,9 @@ jobs:
       - name: Get R2 bucket usage
         id: get_r2-bucket-usage
         env:
-          ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
-          BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
-          API_TOKEN: ${{ secrets.API_TOKEN }}
+          ACCOUNT_ID: ${{ secrets.account_id }}
+          BUCKET_NAME: ${{ secrets.bucket_name }}
+          API_TOKEN: ${{ secrets.api_token }}
         run: |
           RESPONSE=$(curl -X GET "https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/r2/buckets/$BUCKET_NAME/usage" \
           -H "Authorization: Bearer $API_TOKEN" \
